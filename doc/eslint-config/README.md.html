@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>README.md</title>
+  <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+  <link rel="stylesheet" media="all" href="../doc-style.css" />
+  <script src="../doc-filelist.js"></script>
+  <script>
+    var relativeDir = "../";
+    var thisFile = "eslint-config/README.md";
+    var defaultSidebar = true;
+  </script>
+  <script src="../doc-script.js"></script>
+
+</head>
+<body>
+  <div id="sidebar_wrapper">
+    <div id="sidebar_switch">
+      <span class="tree">Files</span>
+      <span class="headings">Headings</span>
+    </div>
+    <div id="tree"></div>
+    <div id="headings">
+
+      <div class="heading h1">
+        <a href="#common-eslint-config">Common eslint config</a>
+      </div>
+
+      <div class="heading h2">
+        <a href="#how-to-use-in-your-project">How to use in your project</a>
+      </div>
+
+      <div class="heading h2">
+        <a href="#overriding-rules-per-project">Overriding rules per project</a>
+      </div>
+
+      <div class="heading h2">
+        <a href="#migration-to-new-rules">Migration to new rules</a>
+      </div>
+
+      <div class="heading h2">
+        <a href="#development-guide">Development guide</a>
+      </div>
+
+      <div class="heading h3">
+        <a href="#rule-reporting-level-convention">Rule reporting level convention</a>
+      </div>
+
+      <div class="heading h3">
+        <a href="#publishing-changes">Publishing changes</a>
+      </div>
+
+    </div>
+  </div>
+  <div id="sidebar-toggle"></div>
+  <div id="container">
+    <div class="docs markdown"><div class="pilwrap" id="common-eslint-config">
+  <h1>
+    <a href="#common-eslint-config" name="common-eslint-config" class="pilcrow"></a>
+Common eslint config
+  </h1>
+</div>
+<p>A central way to share configs between projects, based on the official guide:</p>
+<ul>
+<li>https://eslint.org/docs/developer-guide/shareable-configs</li>
+</ul>
+<p>The intention is to spend attention on the code rather than subjective and aesthetic
+choices in the code itself. Since a lot of rules have &quot;auto fix&quot; you can run the fixes
+in git hooks or manually to achieve consensus with minimal effort.</p>
+<p>This config makes use of the ESLint plugin system which requires each consumer project to install
+the <code>peerDependencies</code> manually, see the installation step below.</p>
+<div class="pilwrap" id="how-to-use-in-your-project">
+  <h2>
+    <a href="#how-to-use-in-your-project" name="how-to-use-in-your-project" class="pilcrow"></a>
+How to use in your project
+  </h2>
+</div>
+<ol>
+<li>
+<p>Setup your npm client to use the 3p private registry, you need auth to the company npmjs registry see more here</p>
+<ol>
+<li>https://mathletics.atlassian.net/wiki/spaces/BFT/pages/2479390740/Private+npm+registries+at+3p+Learning</li>
+</ol>
+</li>
+<li>
+<p>Install the required <code>peerDependencies</code> of this package</p>
+</li>
+<li>
+<p>Install the config</p>
+</li>
+</ol>
+<p><code>npm install @3plearning/eslint-config</code></p>
+<ol>
+<li>Extend and use the eslint config in your local <code>.eslintrc.js</code> eg:</li>
+</ol>
+<pre><code class="javascript"><span class="hljs-built_in">module</span>.exports = {
+    <span class="hljs-attr">extends</span>: <span class="hljs-string">'@3plearning/eslint-config'</span>,
+}
+</code></pre>
+<div class="pilwrap" id="overriding-rules-per-project">
+  <h2>
+    <a href="#overriding-rules-per-project" name="overriding-rules-per-project" class="pilcrow"></a>
+Overriding rules per project
+  </h2>
+</div>
+<p>There maybe situations where the rules in this config are overzealous and or require too much
+work to update a project to. Using this config is like extending any other ESLint config, you can override
+rules in your project's config like so:</p>
+<pre><code class="javascript"><span class="hljs-built_in">module</span>.exports = {
+    <span class="hljs-attr">extends</span>: <span class="hljs-string">'@3plearning/eslint-config'</span>,
+    <span class="hljs-comment">// If you have the need to, you can override &amp; add any rules etc,</span>
+    <span class="hljs-comment">// just like any other config, eg:</span>
+    <span class="hljs-attr">rules</span>: {
+      <span class="hljs-comment">// Turn this off completley</span>
+      <span class="hljs-string">'react/jsx-closing-bracket-location'</span>: <span class="hljs-string">'off'</span>
+    }
+}
+</code></pre>
+<div class="pilwrap" id="migration-to-new-rules">
+  <h2>
+    <a href="#migration-to-new-rules" name="migration-to-new-rules" class="pilcrow"></a>
+Migration to new rules
+  </h2>
+</div>
+<p>If you are migrating a project you may consider first doing a single commit after
+an <code>eslint --fix</code> and update what was not automatic manually.</p>
+<p>It should also be possible to do one file at a time and use a negated <code>!</code> match in a <code>.eslintignore</code> file.</p>
+<ul>
+<li>https://eslint.org/docs/user-guide/configuring/ignoring-code#the-eslintignore-file</li>
+</ul>
+<pre><code class="shell"><span class="hljs-meta">#</span><span class="bash"> example to ignore everyting and one file at a time:</span>
+.src/*
+<span class="hljs-meta">#</span><span class="bash"> see use of !</span>
+!src/one-particular-file
+</code></pre>
+<div class="pilwrap" id="development-guide">
+  <h2>
+    <a href="#development-guide" name="development-guide" class="pilcrow"></a>
+Development guide
+  </h2>
+</div>
+<div class="pilwrap" id="rule-reporting-level-convention">
+  <h3>
+    <a href="#rule-reporting-level-convention" name="rule-reporting-level-convention" class="pilcrow"></a>
+Rule reporting level convention
+  </h3>
+</div>
+<p>So far all rules follow the convention to use the string based constants over numbers for rules.
+The intention is that its easier to read, eg use <code>&quot;off&quot;</code> instead of <code>0</code> to turn off a rule, there are the following:</p>
+<ul>
+<li><code>'off'</code> not <code>0</code> - turn the rule off</li>
+<li><code>'warn'</code> not <code>1</code> - turn the rule on as a warning (will not affect exit code)</li>
+<li><code>'error'</code> not <code>2</code> - turn the rule on as an error (the exit code is 1 when it errors)</li>
+</ul>
+<div class="pilwrap" id="publishing-changes">
+  <h3>
+    <a href="#publishing-changes" name="publishing-changes" class="pilcrow"></a>
+Publishing changes
+  </h3>
+</div>
+<p>Changes to this repository are being deployed to npmjs in CI for builds on the master branch.</p>
+</div>
+  </div>
+</body>
+</html>

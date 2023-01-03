@@ -1,0 +1,5 @@
+{
+    "teamcity": "https://ci.3plearning.com/buildConfiguration/FrontEnd_2_Javascript_3plearningEslintConfig",
+    "bitbucket": "https://bitbucket.org/mathletics/3p-eslint-config",
+    "npmjs": "https://www.npmjs.com/package/@3plearning/eslint-config"
+}

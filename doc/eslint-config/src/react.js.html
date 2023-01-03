@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>react.js</title>
+  <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+  <link rel="stylesheet" media="all" href="../../doc-style.css" />
+  <script src="../../doc-filelist.js"></script>
+  <script>
+    var relativeDir = "../../";
+    var thisFile = "eslint-config/src/react.js";
+    var defaultSidebar = true;
+  </script>
+  <script src="../../doc-script.js"></script>
+
+</head>
+<body>
+  <div id="sidebar_wrapper">
+    <div id="sidebar_switch">
+      <span class="tree">Files</span>
+      <span class="headings">Headings</span>
+    </div>
+    <div id="tree"></div>
+    <div id="headings">
+
+    </div>
+  </div>
+  <div id="sidebar-toggle"></div>
+  <div id="container">
+    <div class="background highlight"></div>
+<table cellpadding="0" cellspacing="0">
+  <tbody>
+    
+      <tr>
+        <td class="docs">
+          <h1>react.js</h1>
+        </td>
+        <td class="code highlight"></td>
+      </tr>
+    
+    
+      <tr>
+        <td class="docs">
+          <div class="pilwrap">
+  <a class="pilcrow" href="#section-1" id="section-1"></a>
+</div>
+<div class="dox">
+<div class="summary">
+<p>React specific rules see plugin docs.</p>
+</div>
+<div class="body">
+</div>
+<div class="details">
+<div class="dox_tag_title">See</div>
+<div class="dox_tag_detail">
+<a href="https://github.com/yannickcr/eslint-plugin-react/blob/master/docs/rules/jsx-wrap-multilines.md">https://github.com/yannickcr/eslint-plugin-react/blob/master/docs/rules/jsx-wrap-multilines.md</a>
+</div>
+</div>
+</div>
+
+        </td>
+        <td class="code highlight">
+          <pre class="javascript"><span class="hljs-built_in">module</span>.exports = {
+    <span class="hljs-attr">plugins</span>: [
+        <span class="hljs-string">'react'</span>,
+        <span class="hljs-string">'react-hooks'</span>,
+        <span class="hljs-string">'jsx-a11y'</span>
+    ],
+    <span class="hljs-attr">extends</span>: [
+        <span class="hljs-string">'plugin:react/recommended'</span>,
+        <span class="hljs-string">'plugin:react-hooks/recommended'</span>,
+        <span class="hljs-string">'plugin:jsx-a11y/recommended'</span>
+    ],
+    <span class="hljs-attr">settings</span>: {
+</pre>
+        </td>
+      </tr>
+    
+      <tr>
+        <td class="docs">
+          <div class="pilwrap">
+  <a class="pilcrow" href="#section-2" id="section-2"></a>
+</div>
+<p>Without this the default logs errors</p>
+
+        </td>
+        <td class="code highlight">
+          <pre class="javascript">        <span class="hljs-string">'react'</span>: {
+            <span class="hljs-string">'version'</span>: <span class="hljs-string">'detect'</span>
+        }
+    },
+    <span class="hljs-attr">globals</span>: {
+        <span class="hljs-string">'window'</span>: <span class="hljs-literal">true</span>,
+        <span class="hljs-string">'JSX'</span>: <span class="hljs-literal">true</span>
+    },
+    <span class="hljs-attr">env</span>: {
+        <span class="hljs-string">'browser'</span>: <span class="hljs-literal">true</span>
+    },
+    <span class="hljs-attr">rules</span>: {
+</pre>
+        </td>
+      </tr>
+    
+      <tr>
+        <td class="docs">
+          <div class="pilwrap">
+  <a class="pilcrow" href="#section-3" id="section-3"></a>
+</div>
+<p>Base rule but only applies to JSX</p>
+
+        </td>
+        <td class="code highlight">
+          <pre class="javascript">        <span class="hljs-string">'jsx-quotes'</span>: [
+            <span class="hljs-string">'error'</span>,
+            <span class="hljs-string">'prefer-double'</span>
+        ],
+</pre>
+        </td>
+      </tr>
+    
+      <tr>
+        <td class="docs">
+          <div class="pilwrap">
+  <a class="pilcrow" href="#section-4" id="section-4"></a>
+</div>
+<p>disable rule from recommended its is responsible for many false positives</p>
+
+        </td>
+        <td class="code highlight">
+          <pre class="javascript">        <span class="hljs-string">'react/display-name'</span>: [<span class="hljs-string">'off'</span>],
+</pre>
+        </td>
+      </tr>
+    
+      <tr>
+        <td class="docs">
+          <div class="pilwrap">
+  <a class="pilcrow" href="#section-5" id="section-5"></a>
+</div>
+<p>https://github.com/yannickcr/eslint-plugin-react/blob/master/docs/rules/jsx-wrap-multilines.md</p>
+
+        </td>
+        <td class="code highlight">
+          <pre class="javascript">        <span class="hljs-string">'react/jsx-wrap-multilines'</span>: [
+            <span class="hljs-string">'error'</span>,
+            {
+                <span class="hljs-string">'return'</span>: <span class="hljs-string">'parens-new-line'</span>,
+                <span class="hljs-string">'declaration'</span>: <span class="hljs-string">'parens-new-line'</span>,
+                <span class="hljs-string">'assignment'</span>: <span class="hljs-string">'parens-new-line'</span>,
+                <span class="hljs-string">'arrow'</span>: <span class="hljs-string">'parens-new-line'</span>,
+                <span class="hljs-string">'condition'</span>: <span class="hljs-string">'ignore'</span>,
+                <span class="hljs-string">'logical'</span>: <span class="hljs-string">'ignore'</span>,
+                <span class="hljs-string">'prop'</span>: <span class="hljs-string">'ignore'</span>
+            }
+        ],
+        <span class="hljs-string">'react/require-render-return'</span>: [
+            <span class="hljs-string">'error'</span>
+        ],
+        <span class="hljs-string">'react/jsx-indent-props'</span>: [
+            <span class="hljs-string">'error'</span>,
+            <span class="hljs-number">4</span>
+        ],
+        <span class="hljs-string">'react/jsx-indent'</span>: [
+            <span class="hljs-string">'error'</span>,
+            <span class="hljs-number">4</span>
+        ],
+        <span class="hljs-string">'react/require-default-props'</span>: [<span class="hljs-string">'off'</span>],
+        <span class="hljs-string">'react/forbid-prop-types'</span>: [<span class="hljs-string">'warn'</span>],
+        <span class="hljs-string">'react/sort-comp'</span>: [<span class="hljs-string">'off'</span>],
+        <span class="hljs-string">'react/jsx-filename-extension'</span>: [<span class="hljs-string">'off'</span>],
+        <span class="hljs-string">'react/jsx-props-no-spreading'</span>: [<span class="hljs-string">'off'</span>],
+        <span class="hljs-string">'react/destructuring-assignment'</span>: [<span class="hljs-string">'off'</span>],
+        <span class="hljs-string">'react/jsx-curly-spacing'</span>: [<span class="hljs-string">'error'</span>, {<span class="hljs-string">'when'</span>: <span class="hljs-string">'never'</span>}],
+        <span class="hljs-string">'react/jsx-tag-spacing'</span>: [<span class="hljs-string">'error'</span>, {
+            <span class="hljs-string">'closingSlash'</span>: <span class="hljs-string">'never'</span>,
+            <span class="hljs-string">'beforeSelfClosing'</span>: <span class="hljs-string">'always'</span>,
+            <span class="hljs-string">'afterOpening'</span>: <span class="hljs-string">'never'</span>,
+            <span class="hljs-string">'beforeClosing'</span>: <span class="hljs-string">'allow'</span>
+        }],
+        <span class="hljs-string">'react/jsx-first-prop-new-line'</span>: [<span class="hljs-string">'error'</span>, <span class="hljs-string">'multiline'</span>],
+        <span class="hljs-string">'react/jsx-closing-bracket-location'</span>: [<span class="hljs-string">'error'</span>, <span class="hljs-string">'line-aligned'</span>],
+        <span class="hljs-string">'react/jsx-curly-brace-presence'</span>: [<span class="hljs-string">'error'</span>, {
+            <span class="hljs-attr">props</span>: <span class="hljs-string">'always'</span>,
+            <span class="hljs-attr">children</span>: <span class="hljs-string">'never'</span>
+        }],
+</pre>
+        </td>
+      </tr>
+    
+      <tr>
+        <td class="docs">
+          <div class="pilwrap">
+  <a class="pilcrow" href="#section-6" id="section-6"></a>
+</div>
+<p>conflicts with jsx-a11y/alt-text</p>
+
+        </td>
+        <td class="code highlight">
+          <pre class="javascript">        <span class="hljs-string">'jsx-a11y/img-redundant-alt'</span>: <span class="hljs-string">'off'</span>,
+
+</pre>
+        </td>
+      </tr>
+    
+      <tr>
+        <td class="docs">
+          <div class="pilwrap">
+  <a class="pilcrow" href="#section-7" id="section-7"></a>
+</div>
+<div class="dox">
+<div class="summary">
+<p>React Hooks plugin specific https://www.npmjs.com/package/eslint-plugin-react-hooks</p>
+</div>
+<div class="body">
+</div>
+</div>
+
+        </td>
+        <td class="code highlight">
+          <pre class="javascript">        <span class="hljs-string">'react-hooks/rules-of-hooks'</span>: [
+            <span class="hljs-string">'error'</span>
+        ],
+        <span class="hljs-string">'react-hooks/exhaustive-deps'</span>: [
+            <span class="hljs-string">'warn'</span>
+        ],
+</pre>
+        </td>
+      </tr>
+    
+      <tr>
+        <td class="docs">
+          <div class="pilwrap">
+  <a class="pilcrow" href="#section-8" id="section-8"></a>
+</div>
+<p>this is a subjective choice of name, Chakra uses children prop eg InputRightElement.</p>
+
+        </td>
+        <td class="code highlight">
+          <pre class="javascript">        <span class="hljs-string">'react/no-children-prop'</span>: <span class="hljs-string">'off'</span>
+    }
+};
+
+</pre>
+        </td>
+      </tr>
+    
+  </tbody>
+</table>
+
+  </div>
+</body>
+</html>

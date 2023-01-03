@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>base.js</title>
+  <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+  <link rel="stylesheet" media="all" href="../../doc-style.css" />
+  <script src="../../doc-filelist.js"></script>
+  <script>
+    var relativeDir = "../../";
+    var thisFile = "eslint-config/src/base.js";
+    var defaultSidebar = true;
+  </script>
+  <script src="../../doc-script.js"></script>
+
+</head>
+<body>
+  <div id="sidebar_wrapper">
+    <div id="sidebar_switch">
+      <span class="tree">Files</span>
+      <span class="headings">Headings</span>
+    </div>
+    <div id="tree"></div>
+    <div id="headings">
+
+    </div>
+  </div>
+  <div id="sidebar-toggle"></div>
+  <div id="container">
+    <div class="background highlight"></div>
+<table cellpadding="0" cellspacing="0">
+  <tbody>
+    
+      <tr>
+        <td class="docs">
+          <h1>base.js</h1>
+        </td>
+        <td class="code highlight"></td>
+      </tr>
+    
+    
+      <tr>
+        <td class="docs">
+          <div class="pilwrap">
+  <a class="pilcrow" href="#section-1" id="section-1"></a>
+</div>
+<div class="dox">
+<div class="summary">
+<p>Base linting rules, these can apply to both Javascript and Typescript projects.</p>
+</div>
+<div class="body">
+</div>
+</div>
+
+        </td>
+        <td class="code highlight">
+          <pre class="javascript"><span class="hljs-built_in">module</span>.exports = {
+    <span class="hljs-attr">env</span>: {
+        <span class="hljs-string">'es6'</span>: <span class="hljs-literal">true</span>
+    },
+    <span class="hljs-attr">extends</span>: [
+        <span class="hljs-string">'eslint:recommended'</span>
+    ],
+    <span class="hljs-attr">rules</span>: {
+        <span class="hljs-string">'no-unused-vars'</span>: <span class="hljs-string">'warn'</span>,
+        <span class="hljs-string">'comma-dangle'</span>: [<span class="hljs-string">'error'</span>, <span class="hljs-string">'never'</span>],
+        <span class="hljs-string">'no-undef'</span>: <span class="hljs-string">'warn'</span>,
+        <span class="hljs-string">'eol-last'</span>: [<span class="hljs-string">'error'</span>, <span class="hljs-string">'always'</span>],
+        <span class="hljs-string">'no-debugger'</span>: [<span class="hljs-string">'error'</span>],
+        <span class="hljs-string">'func-style'</span>: [<span class="hljs-string">'error'</span>, <span class="hljs-string">'declaration'</span>, {<span class="hljs-string">'allowArrowFunctions'</span>: <span class="hljs-literal">true</span>}],
+        <span class="hljs-string">'space-in-parens'</span>: [<span class="hljs-string">'error'</span>, <span class="hljs-string">'never'</span>],
+        <span class="hljs-string">'object-property-newline'</span>: [<span class="hljs-string">'error'</span>],
+        <span class="hljs-string">'padding-line-between-statements'</span>: [
+            <span class="hljs-string">'error'</span>,
+            {
+                <span class="hljs-attr">blankLine</span>: <span class="hljs-string">'always'</span>,
+                <span class="hljs-attr">prev</span>: <span class="hljs-string">'*'</span>,
+                <span class="hljs-string">'next'</span>: <span class="hljs-string">'return'</span>
+            },
+            {
+                <span class="hljs-attr">blankLine</span>: <span class="hljs-string">'always'</span>,
+                <span class="hljs-attr">prev</span>: [<span class="hljs-string">'const'</span>, <span class="hljs-string">'let'</span>, <span class="hljs-string">'var'</span>, <span class="hljs-string">'export'</span>],
+                <span class="hljs-attr">next</span>: <span class="hljs-string">'*'</span>
+            },
+            {
+                <span class="hljs-attr">blankLine</span>: <span class="hljs-string">'always'</span>,
+                <span class="hljs-attr">prev</span>: <span class="hljs-string">'*'</span>,
+                <span class="hljs-attr">next</span>: <span class="hljs-string">'export'</span>
+            },
+            {
+                <span class="hljs-attr">blankLine</span>: <span class="hljs-string">'never'</span>,
+                <span class="hljs-attr">prev</span>: <span class="hljs-string">'var'</span>,
+                <span class="hljs-attr">next</span>: <span class="hljs-string">'var'</span>
+            },
+            {
+                <span class="hljs-attr">blankLine</span>: <span class="hljs-string">'never'</span>,
+                <span class="hljs-attr">prev</span>: <span class="hljs-string">'let'</span>,
+                <span class="hljs-attr">next</span>: <span class="hljs-string">'let'</span>
+            },
+            {
+                <span class="hljs-attr">blankLine</span>: <span class="hljs-string">'never'</span>,
+                <span class="hljs-attr">prev</span>: <span class="hljs-string">'const'</span>,
+                <span class="hljs-attr">next</span>: <span class="hljs-string">'const'</span>
+            },
+            {
+                <span class="hljs-attr">blankLine</span>: <span class="hljs-string">"always"</span>,
+                <span class="hljs-attr">prev</span>: <span class="hljs-string">"*"</span>,
+                <span class="hljs-attr">next</span>: <span class="hljs-string">"return"</span>
+            }
+        ],
+        <span class="hljs-string">'quotes'</span>: [
+            <span class="hljs-number">2</span>,
+            <span class="hljs-string">'single'</span>,
+            {
+                <span class="hljs-string">'avoidEscape'</span>: <span class="hljs-literal">true</span>
+            }
+        ],
+        <span class="hljs-string">'quote-props'</span>: [<span class="hljs-string">'error'</span>, <span class="hljs-string">'consistent-as-needed'</span>],
+        <span class="hljs-string">'indent'</span>: [<span class="hljs-string">'error'</span>, <span class="hljs-number">4</span>],
+        <span class="hljs-string">'no-spaced-func'</span>: [<span class="hljs-string">'error'</span>],
+        <span class="hljs-string">'no-irregular-whitespace'</span>: [<span class="hljs-string">'error'</span>],
+        <span class="hljs-string">'no-trailing-spaces'</span>: [<span class="hljs-string">'error'</span>],
+        <span class="hljs-string">'object-curly-newline'</span>: [
+            <span class="hljs-string">'error'</span>,
+            {
+                <span class="hljs-string">'ObjectExpression'</span>: {
+                    <span class="hljs-string">'multiline'</span>: <span class="hljs-literal">true</span>,
+                    <span class="hljs-string">'minProperties'</span>: <span class="hljs-number">2</span>
+                },
+                <span class="hljs-string">'ObjectPattern'</span>: {
+                    <span class="hljs-string">'multiline'</span>: <span class="hljs-literal">true</span>,
+                    <span class="hljs-string">'minProperties'</span>: <span class="hljs-number">2</span>
+                },
+                <span class="hljs-string">'ImportDeclaration'</span>: {
+                    <span class="hljs-string">'multiline'</span>: <span class="hljs-literal">true</span>,
+                    <span class="hljs-string">'minProperties'</span>: <span class="hljs-number">2</span>
+                },
+                <span class="hljs-string">'ExportDeclaration'</span>: {
+                    <span class="hljs-string">'multiline'</span>: <span class="hljs-literal">true</span>,
+                    <span class="hljs-string">'minProperties'</span>: <span class="hljs-number">2</span>
+                }
+            }
+        ],
+        <span class="hljs-string">'no-new'</span>: <span class="hljs-string">'warn'</span>,
+        <span class="hljs-string">'guard-for-in'</span>: <span class="hljs-string">'warn'</span>,
+        <span class="hljs-string">'no-param-reassign'</span>: <span class="hljs-string">'off'</span>,
+        <span class="hljs-string">'max-len'</span>: [
+            <span class="hljs-string">'error'</span>,
+            <span class="hljs-number">140</span>,
+            {
+                <span class="hljs-string">'ignoreUrls'</span>: <span class="hljs-literal">true</span>
+            }
+        ],
+        <span class="hljs-string">'linebreak-style'</span>: [
+            <span class="hljs-string">'error'</span>,
+            <span class="hljs-string">'unix'</span>
+        ],
+        <span class="hljs-string">'no-restricted-syntax'</span>: <span class="hljs-string">'off'</span>,
+        <span class="hljs-string">'no-tabs'</span>: <span class="hljs-string">'error'</span>,
+        <span class="hljs-string">'no-empty'</span>: [
+            <span class="hljs-string">'error'</span>
+        ],
+        <span class="hljs-string">'no-multiple-empty-lines'</span>: [
+            <span class="hljs-string">'error'</span>,
+            {
+                <span class="hljs-string">'max'</span>: <span class="hljs-number">1</span>,
+                <span class="hljs-string">'maxBOF'</span>: <span class="hljs-number">0</span>,
+                <span class="hljs-string">'maxEOF'</span>: <span class="hljs-number">1</span>
+            }
+        ],
+        <span class="hljs-string">'padded-blocks'</span>: [<span class="hljs-string">'error'</span>, <span class="hljs-string">'never'</span>],
+        <span class="hljs-string">'no-inline-comments'</span>: [<span class="hljs-string">'error'</span>],
+        <span class="hljs-string">'newline-after-var'</span>: [<span class="hljs-string">'error'</span>, <span class="hljs-string">'always'</span>],
+        <span class="hljs-string">'space-before-function-paren'</span>: [<span class="hljs-string">'error'</span>, <span class="hljs-string">'always'</span>],
+        <span class="hljs-string">'prefer-spread'</span>: <span class="hljs-string">'warn'</span>,
+        <span class="hljs-string">'object-curly-spacing'</span>: [<span class="hljs-string">'error'</span>, <span class="hljs-string">'always'</span>],
+        <span class="hljs-string">'semi'</span>: [<span class="hljs-string">'error'</span>, <span class="hljs-string">'always'</span>],
+        <span class="hljs-string">'no-use-before-define'</span>: [
+            <span class="hljs-string">'error'</span>,
+            {
+                <span class="hljs-string">'functions'</span>: <span class="hljs-literal">false</span>,
+                <span class="hljs-string">'classes'</span>: <span class="hljs-literal">true</span>
+            }
+        ],
+        <span class="hljs-string">'comma-spacing'</span>: [<span class="hljs-string">'error'</span>, {
+            <span class="hljs-string">'before'</span>: <span class="hljs-literal">false</span>,
+            <span class="hljs-string">'after'</span>: <span class="hljs-literal">true</span>
+        }],
+        <span class="hljs-string">'key-spacing'</span>: [<span class="hljs-string">'error'</span>, { <span class="hljs-string">'afterColon'</span>: <span class="hljs-literal">true</span> }]
+    }
+};
+
+</pre>
+        </td>
+      </tr>
+    
+  </tbody>
+</table>
+
+  </div>
+</body>
+</html>

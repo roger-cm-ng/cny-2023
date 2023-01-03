@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>typescript.js</title>
+  <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+  <link rel="stylesheet" media="all" href="../../doc-style.css" />
+  <script src="../../doc-filelist.js"></script>
+  <script>
+    var relativeDir = "../../";
+    var thisFile = "eslint-config/src/typescript.js";
+    var defaultSidebar = true;
+  </script>
+  <script src="../../doc-script.js"></script>
+
+</head>
+<body>
+  <div id="sidebar_wrapper">
+    <div id="sidebar_switch">
+      <span class="tree">Files</span>
+      <span class="headings">Headings</span>
+    </div>
+    <div id="tree"></div>
+    <div id="headings">
+
+    </div>
+  </div>
+  <div id="sidebar-toggle"></div>
+  <div id="container">
+    <div class="background highlight"></div>
+<table cellpadding="0" cellspacing="0">
+  <tbody>
+    
+      <tr>
+        <td class="docs">
+          <h1>typescript.js</h1>
+        </td>
+        <td class="code highlight"></td>
+      </tr>
+    
+    
+      <tr>
+        <td class="docs">
+          <div class="pilwrap">
+  <a class="pilcrow" href="#section-1" id="section-1"></a>
+</div>
+
+        </td>
+        <td class="code highlight">
+          <pre class="javascript"><span class="hljs-built_in">module</span>.exports = {
+    <span class="hljs-attr">plugins</span>: [
+        <span class="hljs-string">'@typescript-eslint'</span>
+    ],
+    <span class="hljs-attr">extends</span>: [
+        <span class="hljs-string">'plugin:@typescript-eslint/recommended'</span>,
+        <span class="hljs-string">'plugin:import/typescript'</span>
+    ],
+    <span class="hljs-attr">settings</span>: {
+        <span class="hljs-string">'import/parsers'</span>: {
+            <span class="hljs-string">'@typescript-eslint/parser'</span>: [
+                <span class="hljs-string">'.ts'</span>,
+                <span class="hljs-string">'.tsx'</span>
+            ]
+        }
+    },
+    <span class="hljs-attr">parser</span>: <span class="hljs-string">'@typescript-eslint/parser'</span>,
+    <span class="hljs-attr">parserOptions</span>: {
+        <span class="hljs-string">'project'</span>: [
+            <span class="hljs-string">'./tsconfig.json'</span>
+        ],
+        <span class="hljs-string">'ecmaVersion'</span>: <span class="hljs-number">6</span>,
+        <span class="hljs-string">'sourceType'</span>: <span class="hljs-string">'module'</span>,
+        <span class="hljs-string">'ecmaFeatures'</span>: {
+            <span class="hljs-string">'modules'</span>: <span class="hljs-literal">true</span>
+        }
+    },
+    <span class="hljs-attr">rules</span>: {
+</pre>
+        </td>
+      </tr>
+    
+      <tr>
+        <td class="docs">
+          <div class="pilwrap">
+  <a class="pilcrow" href="#section-2" id="section-2"></a>
+</div>
+<div class="dox">
+<div class="summary">
+<p>Plugin @typescript-eslint linting rules.</p>
+</div>
+<div class="body">
+</div>
+</div>
+
+        </td>
+        <td class="code highlight">
+          <pre class="javascript">        <span class="hljs-string">'@typescript-eslint/member-delimiter-style'</span>: [
+            <span class="hljs-string">'error'</span>,
+            {
+                <span class="hljs-string">'multiline'</span>: {
+                    <span class="hljs-string">'delimiter'</span>: <span class="hljs-string">'none'</span>
+                }
+            }
+        ],
+        <span class="hljs-string">'@typescript-eslint/no-unused-vars'</span>: <span class="hljs-string">'error'</span>,
+</pre>
+        </td>
+      </tr>
+    
+      <tr>
+        <td class="docs">
+          <div class="pilwrap">
+  <a class="pilcrow" href="#section-3" id="section-3"></a>
+</div>
+<p>as per docs, disable the base rule as it can report incorrect errors in combination with this one</p>
+
+        </td>
+        <td class="code highlight">
+          <pre class="javascript">        <span class="hljs-string">'no-use-before-define'</span>: [<span class="hljs-string">'off'</span>],
+        <span class="hljs-string">'@typescript-eslint/no-use-before-define'</span>: [
+            <span class="hljs-string">'error'</span>,
+            {
+                <span class="hljs-string">'functions'</span>: <span class="hljs-literal">false</span>,
+                <span class="hljs-string">'classes'</span>: <span class="hljs-literal">true</span>
+            }
+        ],
+</pre>
+        </td>
+      </tr>
+    
+      <tr>
+        <td class="docs">
+          <div class="pilwrap">
+  <a class="pilcrow" href="#section-4" id="section-4"></a>
+</div>
+<p>https://github.com/typescript-eslint/typescript-eslint/blob/main/packages/eslint-plugin/docs/rules/naming-convention.md</p>
+
+        </td>
+        <td class="code highlight">
+          <pre class="javascript">        <span class="hljs-string">'@typescript-eslint/naming-convention'</span>: [
+            <span class="hljs-string">'error'</span>,
+            {
+                <span class="hljs-attr">selector</span>: <span class="hljs-string">'default'</span>,
+                <span class="hljs-attr">format</span>: [<span class="hljs-string">'camelCase'</span>],
+                <span class="hljs-attr">leadingUnderscore</span>: <span class="hljs-string">'allow'</span>,
+                <span class="hljs-attr">trailingUnderscore</span>: <span class="hljs-string">'allow'</span>
+            },
+            {
+                <span class="hljs-attr">selector</span>: <span class="hljs-string">'variable'</span>,
+</pre>
+        </td>
+      </tr>
+    
+      <tr>
+        <td class="docs">
+          <div class="pilwrap">
+  <a class="pilcrow" href="#section-5" id="section-5"></a>
+</div>
+<p>PascalCase convention is used for React function components</p>
+
+        </td>
+        <td class="code highlight">
+          <pre class="javascript">                format: [<span class="hljs-string">'camelCase'</span>, <span class="hljs-string">'UPPER_CASE'</span>, <span class="hljs-string">'PascalCase'</span>],
+                <span class="hljs-attr">leadingUnderscore</span>: <span class="hljs-string">'allow'</span>,
+                <span class="hljs-attr">trailingUnderscore</span>: <span class="hljs-string">'allow'</span>
+            },
+            {
+                <span class="hljs-attr">selector</span>: <span class="hljs-string">'typeLike'</span>,
+                <span class="hljs-attr">format</span>: [<span class="hljs-string">'PascalCase'</span>]
+            },
+            {
+                <span class="hljs-attr">selector</span>: [<span class="hljs-string">'parameter'</span>],
+</pre>
+        </td>
+      </tr>
+    
+      <tr>
+        <td class="docs">
+          <div class="pilwrap">
+  <a class="pilcrow" href="#section-6" id="section-6"></a>
+</div>
+<p>PascalCase convention is used for React components in params</p>
+
+        </td>
+        <td class="code highlight">
+          <pre class="javascript">                format: [
+                    <span class="hljs-string">'camelCase'</span>,
+                    <span class="hljs-string">'PascalCase'</span>
+                ],
+                <span class="hljs-attr">filter</span>: {
+</pre>
+        </td>
+      </tr>
+    
+      <tr>
+        <td class="docs">
+          <div class="pilwrap">
+  <a class="pilcrow" href="#section-7" id="section-7"></a>
+</div>
+<p>Placeholder convention for when the initial parameters are unused</p>
+
+        </td>
+        <td class="code highlight">
+          <pre class="javascript">                    regex: <span class="hljs-string">'(_|__|___)'</span>,
+                    <span class="hljs-attr">match</span>: <span class="hljs-literal">false</span>
+                  }
+            },
+            {
+</pre>
+        </td>
+      </tr>
+    
+      <tr>
+        <td class="docs">
+          <div class="pilwrap">
+  <a class="pilcrow" href="#section-8" id="section-8"></a>
+</div>
+<p>PascalCase convention is used for React function components</p>
+
+        </td>
+        <td class="code highlight">
+          <pre class="javascript">                selector: <span class="hljs-string">'function'</span>,
+                <span class="hljs-attr">format</span>: [<span class="hljs-string">'PascalCase'</span>, <span class="hljs-string">'camelCase'</span>]
+            },
+            {
+                <span class="hljs-attr">selector</span>: <span class="hljs-string">'property'</span>,
+                <span class="hljs-attr">format</span>: [
+                    <span class="hljs-string">'camelCase'</span>,
+                    <span class="hljs-string">'PascalCase'</span>,
+                    <span class="hljs-string">'UPPER_CASE'</span>
+                ],
+                <span class="hljs-attr">filter</span>: {
+</pre>
+        </td>
+      </tr>
+    
+      <tr>
+        <td class="docs">
+          <div class="pilwrap">
+  <a class="pilcrow" href="#section-9" id="section-9"></a>
+</div>
+<p>Ignore chakra-ui pseudos style property naming convention as per:
+node_modules/@chakra-ui/styled-system/dist/declarations/src/pseudos.d.ts</p>
+
+        </td>
+        <td class="code highlight">
+          <pre class="javascript">                    regex: <span class="hljs-string">'(_hover|_active|_focus|_highlighted|_focusWithin|_focusVisible|_disabled|_readOnly|_before|_after|_empty|_expanded|_checked|_grabbed|_pressed|_invalid|_valid|_loading|_selected|_hidden|_autofill|_even|_odd|_first|_last|_notFirst|_notLast|_visited|_activeLink|_activeStep|_indeterminate|_groupHover|_peerHover|_groupFocus|_peerFocus|_groupFocusVisible|_peerFocusVisible|_groupActive|_peerActive|_groupDisabled|_peerDisabled|_groupInvalid|_peerInvalid|_groupChecked|_peerChecked|_groupFocusWithin|_peerFocusWithin|_peerPlaceholderShown|_placeholder|_placeholderShown|_fullScreen|_selection|_rtl|_ltr|_mediaDark|_mediaReduceMotion|_dark|_light)'</span>,
+                    <span class="hljs-attr">match</span>: <span class="hljs-literal">false</span>
+                }
+            },
+        ],
+</pre>
+        </td>
+      </tr>
+    
+      <tr>
+        <td class="docs">
+          <div class="pilwrap">
+  <a class="pilcrow" href="#section-10" id="section-10"></a>
+</div>
+<p>as per docs, disable the base rule as it can report incorrect errors in combination with this one</p>
+
+        </td>
+        <td class="code highlight">
+          <pre class="javascript">        <span class="hljs-string">'semi'</span>: [<span class="hljs-string">'off'</span>],
+        <span class="hljs-string">'@typescript-eslint/semi'</span>: [<span class="hljs-string">'error'</span>, <span class="hljs-string">'always'</span>],
+
+</pre>
+        </td>
+      </tr>
+    
+      <tr>
+        <td class="docs">
+          <div class="pilwrap">
+  <a class="pilcrow" href="#section-11" id="section-11"></a>
+</div>
+<p>as per docs, disable the base rule as it can report incorrect errors in combination with this one</p>
+
+        </td>
+        <td class="code highlight">
+          <pre class="javascript">        <span class="hljs-string">'object-curly-spacing'</span>: [<span class="hljs-string">'off'</span>],
+        <span class="hljs-string">'@typescript-eslint/object-curly-spacing'</span>: [<span class="hljs-string">'error'</span>, <span class="hljs-string">'always'</span>],
+
+</pre>
+        </td>
+      </tr>
+    
+      <tr>
+        <td class="docs">
+          <div class="pilwrap">
+  <a class="pilcrow" href="#section-12" id="section-12"></a>
+</div>
+<p>This is error in @typescript-eslint/recommended its 'unavoidable' in the situations we use it why have the log noise</p>
+
+        </td>
+        <td class="code highlight">
+          <pre class="javascript">        <span class="hljs-string">'@typescript-eslint/ban-ts-comment'</span>: [<span class="hljs-string">'off'</span>],
+
+</pre>
+        </td>
+      </tr>
+    
+      <tr>
+        <td class="docs">
+          <div class="pilwrap">
+  <a class="pilcrow" href="#section-13" id="section-13"></a>
+</div>
+<p>Developers need to manage this in PRs, leave a comment for any type</p>
+
+        </td>
+        <td class="code highlight">
+          <pre class="javascript">        <span class="hljs-string">'@typescript-eslint/no-explicit-any'</span>: [<span class="hljs-string">'off'</span>]
+    }
+};
+
+</pre>
+        </td>
+      </tr>
+    
+  </tbody>
+</table>
+
+  </div>
+</body>
+</html>
